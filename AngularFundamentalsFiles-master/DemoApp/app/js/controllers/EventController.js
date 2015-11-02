@@ -2,9 +2,10 @@
 
 eventsApp.controller('EventController',
     function EventsController($scope) {
+        $scope.sortorder = 'name';
         $scope.event = {
             name: 'Angular Boot Camp',
-            date: '1/1/2013',
+            date: 1359781015626,
             time: '10:30 am',
             location: {
                 address: 'Google Headquarters',
@@ -33,7 +34,7 @@ eventsApp.controller('EventController',
                     name: 'Well Behaved Controllers',
                     creatorName: 'Stanislaw Pietorov',
                     duration: '1.5 hrs',
-                    level: 'Beginner',
+                    level: 'Introductory',
                     abstract: 'Discipline your controllers to get the best out of them.',
                     upVoteCount: 0
                 }
