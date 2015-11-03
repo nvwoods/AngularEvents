@@ -67,7 +67,7 @@ select, textarea {
     text-align:center;
 }
 .pointer {
-    cursor: pointer;
+    cursor: pointer
 }
 .date-picker {
     position: absolute;
@@ -77,5 +77,19 @@ select, textarea {
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none
+    display: none;
+}
+
+img[src=""] {
+    display:none;
+}
+
+select.ng-pristine.ng-invalid-required, select.ng-pristine.ng-invalid-required:focus:invalid:focus{
+    box-shadow: none;
+    border: none;
+    color: #52575c;
+}
+
+input[type="text"].ng-invalid.ng-dirty:focus {
+    background-color: white;
 }

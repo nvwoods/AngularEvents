@@ -29,12 +29,18 @@
                     <label for="eventDate">Event Date:</label>
                     <input id="eventDate" type="text" required ng-pattern="/(\d{2}\/){2}\d{4}/" ng-model="event.date" placeholder="Format (mm/dd/yyyy)..."/>
                     <label for="eventTime">Event Time:</label>
-                    <input id="eventTime" type="text" ng-model="event.time" placeholder="Start and end time..."/>
+                    <input id="eventTime" type="text" required ng-pattern="/^[01]?[0-9]{1}([\.\:][0-5][0-9])?[AaPp][Mm]$/" ng-model="event.time" placeholder="Start time..."/>
+                    <label for="eventDuration">Duration:</label>
+                    <input id="eventDuration" type="text" required ng-pattern= "/^\d{1,2}(\.\d{1,2})? ?hrs?$/" ng-model="event.duration" placeholder="E.g. 1.5 hrs..."/>
+                    <label for="eventLevel">Level:</label>
+                    <select id="eventLevel" ng-model="event.level" ng-options="l.value as l.name for l in levels" class="input-medium" required>
+                        <option style="display:none" value="">select a type</option>
+                    </select>
                     <label for="eventLocation">Event Location:</label>
-                    <input id="eventLocation" type="text" ng-model="event.location.address" placeholder="Address of event..."/>
+                    <input id="eventLocation" type="text" required ng-model="event.location.address" placeholder="Address of event..."/>
                     <br/>
-                    <input id="eventCity" type="text" ng-model="event.location.city" class="input-small" placeholder="City..."/>
-                    <input id="eventProvince" type="text" ng-model="event.location.province" class="input-small" placeholder="Province..."/>
+                    <input id="eventCity" type="text" ng-model="event.location.city" required class="input-small" placeholder="City..."/>
+                    <input id="eventProvince" type="text" ng-model="event.location.province" required class="input-small" placeholder="Province..."/>
 
                     <label for="eventImageUrl">Image:</label>
                     <input id="eventImageUrl" type="url" ng-model="event.imageUrl" class="input-xlarge" placeholder="Url of image..."/>

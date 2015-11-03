@@ -45,9 +45,9 @@
         Show:
         <select ng-model="query.level" class="input-medium">
             <option selected value="">All</option>
-            <option selected value="introductory">Introductory</option>
-            <option selected value="intermediate">Intermediate</option>
-            <option selected value="advanced">Advanced</option>
+            <option selected value="1">Introductory</option>
+            <option selected value="2">Intermediate</option>
+            <option selected value="3">Advanced</option>
         </select>
         <ul class="thumbnails">
             <li ng-repeat="session in event.sessions | orderBy:sortorder | filter:query">
@@ -67,7 +67,7 @@
                         <h4 class="well-title">{{session.name}}</h4>
                         <h6 style="margin-top: -10px">{{session.creatorName}}</h6>
                         <span>Duration: {{session.duration | durations}}</span><br/>
-                        <span>Level: {{session.level}}</span>
+                        <span>Level: <img ng-src="{{session.level | difficulties}}" height="16" width="16"/></span>
 
                         <p>{{session.abstract}}</p>
                     </div>

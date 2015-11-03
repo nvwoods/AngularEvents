@@ -14,3 +14,17 @@ eventsApp.filter('durations', function() {
         }
     }
 })
+
+eventsApp.filter('difficulties', function() {
+    return function(difficulty) {
+        var imgPath = '/img/icons/difficulty-level/';
+        switch(difficulty) {
+            case 1:
+                return imgPath + 'easy.png';
+            case 2:
+                return imgPath + 'medium.png';
+            case 3:
+                return imgPath + 'hard.png';
+        }
+    }
+})
